@@ -111,15 +111,15 @@ public class SpiderLeg {
 		try {
 
 			writer = new OutputStreamWriter(new FileOutputStream(new File("pers.txt"), true), "UTF-8");
-			writer.append("Nickname: " + nickName).append(System.lineSeparator());
-			writer.append("Name: " + name).append(System.lineSeparator());
-			writer.append("Level: " + level).append(System.lineSeparator());
-			writer.append("Games: " + numberOfGames).append(System.lineSeparator());
-			writer.append("Budgets: " + numberOfBudgets).append(System.lineSeparator());
-			writer.append("Friends: " + numberOfFriends).append(System.lineSeparator());
-			writer.append("City: " + city).append(System.lineSeparator());
-			writer.append("State: " + state).append(System.lineSeparator());
-			writer.close();
+			writer.append("Nickname: " + nickName).append(System.lineSeparator())
+				  .append("Name: " + name).append(System.lineSeparator())
+				  .append("Level: " + level).append(System.lineSeparator())
+				  .append("Games: " + numberOfGames).append(System.lineSeparator())
+				  .append("Budgets: " + numberOfBudgets).append(System.lineSeparator())
+				  .append("Friends: " + numberOfFriends).append(System.lineSeparator())
+				  .append("City: " + city).append(System.lineSeparator())
+				  .append("State: " + state).append(System.lineSeparator())
+				  .close();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -177,20 +177,13 @@ public class SpiderLeg {
 					writer.append("Time_played: " + object.get("hours_forever")).append(System.lineSeparator());
 				}
 			}
-		writer.append(System.lineSeparator());	
-		writer.close();	
+			writer.append(System.lineSeparator());
+			writer.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
-		 * JSONObject object = new JSONObject(scriptElements);
-		 * System.out.println(object.toString());
-		 */
-		// System.out.println(scriptElements);
 	}
 
 	/**
