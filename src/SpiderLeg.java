@@ -25,8 +25,6 @@ public class SpiderLeg {
 	private String url;
 	Writer writer;
 
-	private static int count = 0;
-
 	/**
 	 * This performs all the work. It makes an HTTP request, checks the response,
 	 * and then gathers up all the links on the page. Perform a searchForWord after
@@ -64,9 +62,9 @@ public class SpiderLeg {
 	}
 
 	/**
-	 * 
+	 * Method parses information from script variable in page.
 	 * @param json
-	 * @return
+	 * @return List<String> which contains 
 	 */
 	private List<String> parseGamesFromJSON(String json) {
 		List<String> JSONs = new ArrayList<>();
@@ -85,7 +83,8 @@ public class SpiderLeg {
 	}
 
 	/**
-	 * 
+	 * Method parse user informations from document. Parse user nickname, name, level, number of games,
+	 * number of budgets and number of friends. 
 	 * @return
 	 */
 	private String parseUserInformations() {
@@ -141,7 +140,8 @@ public class SpiderLeg {
 	}
 
 	/**
-	 * Perform a search on html document and get links on all friends
+	 * Perform a search on html document and get links on all friends. This information get from element
+	 * <div id=memberlist> 
 	 */
 	private void getUsers() {
 		String url = this.url;
